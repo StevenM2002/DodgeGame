@@ -4,11 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e1e1c73-b5d6-4206-bdd1-5a2bf70f8650" name="Changes" comment="" />
+    <list default="true" id="8e1e1c73-b5d6-4206-bdd1-5a2bf70f8650" name="Changes" comment="init">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/dodgegame/EntityManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/dodgegame/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/dodgegame/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/dodgegame/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/dodgegame/Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/dodgegame/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/dodgegame/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/dodgegame/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/dodgegame/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/dodgegame/PointsObjective.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/dodgegame/PointsObjective.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/dodgegame/BoardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/dodgegame/BoardTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/dodgegame/EntityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/dodgegame/EntityTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JUnit5 Test Class" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="29KYbeRQUsH6SJI91Y8JcEnU7xT" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -19,10 +43,23 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="org.dodgegame" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.dodgegame.Main" />
       <module name="DodgeGame" />
@@ -36,9 +73,75 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="BoardTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DodgeGame" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.dodgegame.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.dodgegame" />
+      <option name="MAIN_CLASS_NAME" value="org.dodgegame.BoardTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BoardTest.setEntityOnBoard" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DodgeGame" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.dodgegame.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.dodgegame" />
+      <option name="MAIN_CLASS_NAME" value="org.dodgegame.BoardTest" />
+      <option name="METHOD_NAME" value="setEntityOnBoard" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EntityTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DodgeGame" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.dodgegame.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.dodgegame" />
+      <option name="MAIN_CLASS_NAME" value="org.dodgegame.EntityTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EntityTest.movement" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DodgeGame" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.dodgegame.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.dodgegame" />
+      <option name="MAIN_CLASS_NAME" value="org.dodgegame.EntityTest" />
+      <option name="METHOD_NAME" value="movement" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.BoardTest.setEntityOnBoard" />
+        <item itemvalue="JUnit.EntityTest.movement" />
+        <item itemvalue="JUnit.EntityTest" />
+        <item itemvalue="JUnit.BoardTest" />
       </list>
     </recent_temporary>
   </component>
@@ -51,6 +154,41 @@
       <option name="presentableId" value="Default" />
       <updated>1652863316834</updated>
     </task>
+    <task id="LOCAL-00001" summary="init">
+      <created>1652863542064</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1652863542064</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init" />
+    <option name="LAST_COMMIT_MESSAGE" value="init" />
   </component>
 </project>
