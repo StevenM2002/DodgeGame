@@ -24,7 +24,7 @@ class BoardTest {
     void setEntityOnBoard() {
         int xLen = 6;
         int yLen = 3;
-        Board board = new Board(xLen, yLen);
+        Board board = new Board(yLen, xLen);
         Random rand = new Random();
         assertEquals(Board.EMPTYSPACE, board.getEntityOnBoard(rand.nextInt(xLen), rand.nextInt(yLen)));
         int xLoc = rand.nextInt(xLen);

@@ -11,13 +11,13 @@ class EntityTest {
         int xLen = 8;
         int yLen = 11;
         Board board = new Board(xLen, yLen);
-        Entity entity = new Entity(9, 0);
+        Entity entity = new Entity(0, 9);
         assertFalse(entity.isInBoard(board));
-        Entity entity1 = new Entity(5, 2);
+        Entity entity1 = new Entity(2, 5);
         assertTrue(entity1.isInBoard(board));
         Entity entity2 = new Entity(10, 10);
         assertFalse(entity2.isInBoard(board));
-        Entity entity3 = new Entity(4,-3);
+        Entity entity3 = new Entity(-3, 4);
         assertFalse(entity3.isInBoard(board));
     }
 
