@@ -25,6 +25,7 @@ class EntityTest {
     void movement() {
         Entity entity = new Entity(0, 5);
         assertEquals(5, entity.getYLoc());
+        assertEquals(0, entity.getXLoc());
         entity.moveDown();
         assertEquals(4, entity.getYLoc());
         assertEquals(0, entity.getXLoc());
