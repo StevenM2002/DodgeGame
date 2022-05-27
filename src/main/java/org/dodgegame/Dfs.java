@@ -17,6 +17,20 @@ class DfsArgs {
 }
 
 public class Dfs {
+    public static boolean isPossibleSolve(Board board, Player player, ArrayList<ArrayList<Enemy>> totalEnemies) {
+        ArrayList<Coord> visited = new ArrayList<>();
+        boolean[] canReachEnd = new boolean[1];
+        canReachEnd[0] = false;
+        Board dfsBoard = new Board(board.getYBoardLen(), board.getXBoardLen());
+        for (var enemyWave : totalEnemies) {
+            for (var enemy : enemyWave) {
+                board.setEntityOnBoard(enemy.getXLoc(), enemy.getYLoc(), Board.ENEMY);
+            }
+        }
+        var args = new DfsArgs(player.getXLoc(), player.getYLoc(), visited, canReachEnd, dfsBoard);
+        doDfs(args);
+        return canReachEnd[0];
+    }
     public static boolean isPossibleSolve(Board board, Player player) {
         ArrayList<Coord> visited = new ArrayList<>();
         boolean[] canReachEnd = new boolean[1];
