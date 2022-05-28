@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class EntityManagement {
     Board board;
-    int enemyPercentageSpawn = 30;
+    int enemyPercentageSpawn = 50;
     int pointsPercentageSpawn = 5;
     public EntityManagement(Board board) {
         this.board = board;
@@ -34,17 +34,36 @@ public class EntityManagement {
             if (hasEnemy[i]) continue;
             // Has pointsPercentageSpawn chance of spawning on position
             if (rand.nextInt(100) < pointsPercentageSpawn) {
-                System.out.println("AA");
                 pointWave.add(new PointsObjective(i, 0, board));
             }
         }
         return pointWave;
     }
-    private void generateEntireWave() {
+    private void generateEntireWave(Player player) {
         ArrayList<Enemy> enemyWave = generateEnemyWave();
         ArrayList<PointsObjective> pointsWave = generatePointWave(enemyWave);
         totalEnemyWave.add(enemyWave);
         totalPointsWave.add(pointsWave);
+        // Check and make solvable if not solvable
+        ArrayList<Coord> visited = new ArrayList<>();
+        if (!Dfs.isPossibleSolveWave(board, player, totalEnemyWave, visited)) {
+            for (var each: visited) {
+                if (each.y() == 1) {
+                    removeFromWave(new Coord(each.x(), 0));
+                    break;
+                }
+            }
+        }
+    }
+    private void removeFromWave(Coord coord) {
+        var enemyWave = totalEnemyWave.get(totalEnemyWave.size() - 1);
+        for (int i = 0; i < enemyWave.size(); i++) {
+            if (enemyWave.get(i).getXLoc() == coord.x()) {
+                enemyWave.remove(i);
+                board.setEntityOnBoard(coord.x(), 0, Board.EMPTYSPACE);
+                break;
+            }
+        }
     }
     public void moveAllWavesUp(Player player) {
         // Separate into 2 foreach loops instead of 1 fori loop for better time complexity
@@ -58,21 +77,22 @@ public class EntityManagement {
             ArrayList<Integer> buf = new ArrayList<>();
             for (int i = 0; i < pointsWave.size(); i++) {
                 pointsWave.get(i).moveUp();
-//                if (player.isIfPointsCollision(pointsWave.get(i))) {
-//                    buf.add(i);
-//                }
             }
-//            for (int i : buf) {
-//                pointsWave.remove(i);
-//            }
         }
         // Generate after wave movement for free slot
-        generateEntireWave();
+        generateEntireWave(player);
         // Remove out of screen wave for garbage collector
         if (totalPointsWave.size() > board.getYBoardLen()) {
             totalEnemyWave.remove(0);
             totalPointsWave.remove(0);
         }
         player.ifAnyWaveCollision(totalEnemyWave.get(0), totalPointsWave.get(0));
+    }
+
+    public ArrayList<ArrayList<Enemy>> getTotalEnemyWave() {
+        return totalEnemyWave;
+    }
+    public ArrayList<ArrayList<PointsObjective>> getTotalPointsWave() {
+        return totalPointsWave;
     }
 }

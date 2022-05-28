@@ -17,14 +17,13 @@ class DfsArgs {
 }
 
 public class Dfs {
-    public static boolean isPossibleSolve(Board board, Player player, ArrayList<ArrayList<Enemy>> totalEnemies) {
-        ArrayList<Coord> visited = new ArrayList<>();
+    public static boolean isPossibleSolveWave(Board board, Player player, ArrayList<ArrayList<Enemy>> totalEnemies, ArrayList<Coord> visited) {
         boolean[] canReachEnd = new boolean[1];
         canReachEnd[0] = false;
         Board dfsBoard = new Board(board.getYBoardLen(), board.getXBoardLen());
         for (var enemyWave : totalEnemies) {
             for (var enemy : enemyWave) {
-                board.setEntityOnBoard(enemy.getXLoc(), enemy.getYLoc(), Board.ENEMY);
+                dfsBoard.setEntityOnBoard(enemy.getXLoc(), enemy.getYLoc(), Board.ENEMY);
             }
         }
         var args = new DfsArgs(player.getXLoc(), player.getYLoc(), visited, canReachEnd, dfsBoard);
@@ -55,12 +54,10 @@ public class Dfs {
         if (board.getEntityOnBoard(x, y - 1) != Board.ENEMY && board.isInBoard(x, y - 1) && !visited.contains(new Coord(x, y - 1))) {
             args.y--;
             doDfs(args);
-        }
-        if (board.getEntityOnBoard(x - 1, y) != Board.ENEMY && board.isInBoard(x - 1, y) && !visited.contains(new Coord( x - 1, y))) {
+        } else if (board.getEntityOnBoard(x - 1, y) != Board.ENEMY && board.isInBoard(x - 1, y) && !visited.contains(new Coord( x - 1, y))) {
             args.x--;
             doDfs(args);
-        }
-        if (board.getEntityOnBoard(x + 1, y) != Board.ENEMY && board.isInBoard(x + 1, y) && !visited.contains(new Coord(x + 1, y))) {
+        } else if (board.getEntityOnBoard(x + 1, y) != Board.ENEMY && board.isInBoard(x + 1, y) && !visited.contains(new Coord(x + 1, y))) {
             args.x++;
             doDfs(args);
         }
