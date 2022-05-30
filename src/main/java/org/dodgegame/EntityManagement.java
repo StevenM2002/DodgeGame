@@ -26,8 +26,8 @@ public class EntityManagement {
         ArrayList<PointsObjective> pointWave = new ArrayList<>();
         Random rand = new Random();
         boolean[] hasEnemy = new boolean[board.getXBoardLen()];
-        for (int i = 0; i < enemyWave.size(); i++) {
-            hasEnemy[enemyWave.get(i).getXLoc()] = true;
+        for (Enemy enemy : enemyWave) {
+            hasEnemy[enemy.getXLoc()] = true;
         }
         for (int i = 0; i < board.getXBoardLen(); i++) {
             // Prevent spawning points over enemies
@@ -70,13 +70,11 @@ public class EntityManagement {
         for (ArrayList<Enemy> enemyWave : totalEnemyWave) {
             for (Enemy enemy : enemyWave) {
                 enemy.moveUp();
-//                player.ifEnemyCollision(enemy);
             }
         }
         for (ArrayList<PointsObjective> pointsWave : totalPointsWave) {
-            ArrayList<Integer> buf = new ArrayList<>();
-            for (int i = 0; i < pointsWave.size(); i++) {
-                pointsWave.get(i).moveUp();
+            for (PointsObjective pointsObjective : pointsWave) {
+                pointsObjective.moveUp();
             }
         }
         // Generate after wave movement for free slot
